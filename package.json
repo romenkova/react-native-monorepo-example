@@ -1,0 +1,37 @@
+{
+  "name": "react-native-monorepo-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "projects/web",
+    "projects/shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn web:dev\" \"yarn mobile:dev\" ",
+    "web:dev": "yarn workspace web dev",
+    "mobile:dev": "cd ./projects/mobile && yarn dev",
+    "postinstall": "cd ./projects/mobile && yarn"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romenkova/react-native-monorepo-example.git"
+  },
+  "author": "Rita Romenkova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romenkova/react-native-monorepo-example/issues"
+  },
+  "homepage": "https://github.com/romenkova/react-native-monorepo-example#readme",
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^4.1.0",
+    "concurrently": "^7.6.0"
+  }
+}
